@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      @import "./src/style.css";
+    </style>
+    <title>JSDev</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="header-container">
+  
+        <div class="left-header">
+          <img src="./img/W-Industries_PMO-Logo-CMYK.jpg" alt="PMO Logo" class="PMO">
+          <div class="text-header">
+            <div class="FS-Text">Field Services</div>
+            <div class="Dash-Text">D A S H B O A R D</div>
+            <div class="bar-back">
+              <div class="Phrase-Text">"Whatever It Takes"</div>
+            </div>
+          </div>
+        </div>
+  
+          <img src="./img/W-Industries_Full-Logo-CMYK.jpg" alt="W-Industries Logo" class="W-Logo">
+      </div>
+
+      <div class="separator"></div>
+
+      <div class="card-container">
+        <div class="header-cards">
+          <p class="title-header-card">Invoicing Overview</p>
+          <p class="subtitle-header-card">Outstanding By Category</p>
+        </div>
+        
+        <div class="cards-container" id="cards-container"></div>
+      </div>
+
+
+      
+      <div class="chart-container">
+        <div class="chart-wrapper">
+          <div class="chart-title"><p class="chart-title-text">Smartstatus Contract Review</p></div>
+          <div id="chart" class="chartOne" ></div>
+        </div>
+
+        <!-- <div class="chart-wrapper">
+          <div class="chart-title"><p class="chart-title-text">Test Chart</p></div>
+          <div id="chartHardCode" class="chartHardCode"></div>
+        </div> -->
+
+        <div class="chart-wrapper">
+          <div class="chart-title"><p class="chart-title-text">Pie P/Q DB Chart</p></div>
+          <div id="chartPiePQ" class="chartPiePQ"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <script type="module">
+      import "./src/index.js";
+      // import "./src/hardcode.js";
+      import "./src/piePQDB.js";
+      import "./src/cards.js";
+    </script>
+  </body>
+</html>
