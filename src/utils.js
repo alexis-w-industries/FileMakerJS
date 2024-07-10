@@ -3,6 +3,7 @@ import html2canvas from "html2canvas";
 const reconfigureForPieCharts = (data) => {
   const d = data.data;
   let series, labels;
+
   series = d.map((item) => item.x);
   labels = d.map((item) => item.y);
 
