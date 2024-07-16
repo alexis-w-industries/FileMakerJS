@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "apexcharts": "^3.35.3",
+    "dayjs": "^1.11.11",
     "html2canvas": "^1.4.1",
     "nodemon": "^3.1.4"
   }

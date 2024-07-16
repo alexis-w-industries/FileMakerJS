@@ -30,20 +30,34 @@ import {
   radarChart,
   treeMapChart,
 } from "./charts/06-other";
+import { thuanChart } from "./charts/00-ThuanChart";
 
 window.loadChart = function (json) {
   const obj = JSON.parse(json);
-  const { series, seriesNew, type, callback } = obj;
+  const { series, seriesNew, groupMonthObj, jsonDataBars, type, callback } = obj;
 
+  // Contract Review Data
   const crData = series[0].data.map((item) => item.y);
   const crDataLabel = series[0].data.map((item) => item.x);
+
+  // Thuan Months
+    // Contract Review Data
+  const groups = groupMonthObj[0].data.map((item) => {
+    return {
+      title: item.title,
+      cols: Number(item.cols)
+    }
+  });
+
+  // Thuan Chart
+  thuanChart(jsonDataBars, groups);
 
   // Lines
   lineBasicChart();
   lineDataLabelsChart();
   lineZoomTimeChart();
   lineBrushChartAbove();
-  lineBrushChartDown();
+  // lineBrushChartDown();
   lineMissingValuesChart();
 
   // Columnms
