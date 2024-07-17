@@ -49,6 +49,7 @@ window.loadChart = function (json) {
     }
   });
 
+  console.log(jsonDataBars)
   // Thuan Chart
   thuanChart(jsonDataBars, groups);
 
