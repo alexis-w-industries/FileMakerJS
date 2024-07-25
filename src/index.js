@@ -31,10 +31,11 @@ import {
   treeMapChart,
 } from "./charts/06-other";
 import { thuanChart } from "./charts/00-ThuanChart";
+import { internatlVoltaLineChart, monthlyDefectsLineChart } from "./charts/07-InternalVolta";
 
 window.loadChart = function (json) {
   const obj = JSON.parse(json);
-  const { series, seriesNew, groupMonthObj, jsonDataBars, type, callback } = obj;
+  const { series, seriesNew, groupMonthObj, jsonDataBars, jsonArrFI, jsonArrMonthlyDefectsT, type, callback } = obj;
 
   // Contract Review Data
   const crData = series[0].data.map((item) => item.y);
@@ -49,43 +50,45 @@ window.loadChart = function (json) {
     }
   });
 
-  console.log(jsonDataBars)
   // Thuan Chart
   thuanChart(jsonDataBars, groups);
 
+  internatlVoltaLineChart(jsonArrFI);
+  monthlyDefectsLineChart(jsonArrMonthlyDefectsT);
+
   // Lines
-  lineBasicChart();
-  lineDataLabelsChart();
-  lineZoomTimeChart();
-  lineBrushChartAbove();
+  // lineBasicChart();
+  // lineDataLabelsChart();
+  // lineZoomTimeChart();
+  // lineBrushChartAbove();
   // lineBrushChartDown();
-  lineMissingValuesChart();
+  // lineMissingValuesChart();
 
   // Columnms
-  basicColumnsChart();
-  columnDataLabelsChart();
-  stackedColumnsChart();
+  // basicColumnsChart();
+  // columnDataLabelsChart();
+  // stackedColumnsChart();
 
   // Bars
-  barFunc(seriesNew);
-  barGrouped();
-  barStacked();
-  barMixedCombo();
+  // barFunc(seriesNew);
+  // barGrouped();
+  // barStacked();
+  // barMixedCombo();
 
-  // Pie
-  simplePieChart();
-  simpleDonutChart();
+  // // Pie
+  // simplePieChart();
+  // simpleDonutChart();
 
-  // Timeline
-  basicTimelineChart();
-  advancedTimelineChart();
+  // // Timeline
+  // basicTimelineChart();
+  // advancedTimelineChart();
 
-  // Other
-  basicChart(series, type);
-  radarChart(crData, crDataLabel);
-  polarChart(crData, crDataLabel);
-  treeMapChart(series, crDataLabel);
-  leftBars(series, crDataLabel);
+  // // Other
+  // basicChart(series, type);
+  // radarChart(crData, crDataLabel);
+  // polarChart(crData, crDataLabel);
+  // treeMapChart(series, crDataLabel);
+  // leftBars(series, crDataLabel);
 };
 
 //function to save the chart back to FIleMaker.
